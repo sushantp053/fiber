@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/static/natoshi.css" />
+{% extends 'base.html' %} {% block bootstrap %}
+<div id="mainBody">
+  <div id="map"></div>
+  <div id="sidebar">
+    <h1>Reports</h1>
+    <p id="totalCrop">{{ total }}</p>
+    <div id="genList">
+      {% for item in crop_count %}
+      <div>
+        <div title="crop" class="crop">{{item.crop}}</div>
+        <div title="bar" class="bar">{{item.count}}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div id="customSearch">
+  <h1>Search</h1>
+  <div class="col-md-4">
+    <select name="crop" id="crops" class="form-control" onchange="changeCrop(this.value)">
+      <option value="All Crop">--All Crop--</option>
+      {% for item in crop %} {{ item }}
+      <option value="{{ item.crop }}">{{ item.crop }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+
+{{ markers|json_script:"django_data"}} {{ talav|json_script:"talav_data"}}
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="/static/natoshi.js"></script>
+{% endblock %}

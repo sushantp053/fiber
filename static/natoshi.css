@@ -1,0 +1,42 @@
+#map {
+    height: calc(100vh - 175px);
+    width: 70vw;
+}
+#mainBody {
+    display: flex;
+}
+
+#customSearch {
+    background-color: aqua;
+    height: 100px;
+    width: 100vw;
+    text-align: center;
+}
+
+.crop{
+    height: 30px;
+    text-align: start;
+    margin: 5px;
+    padding: 5px;
+}
+.bar{
+    height: 25px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+#sidebar {
+    height: calc(100vh - 175px);
+    width: 30vw;
+    background-color: gainsboro;
+    text-align: center;
+}
+#genList {
+    height: calc(100vh - 230px);
+    width: 30vw;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}

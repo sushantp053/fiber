@@ -1,0 +1,17 @@
+{% extends 'base.html'%} {% block bootstrap %}
+<div id="map"></div>
+{% comment %}
+<script type="text/javascript">
+   = {{ cngpumps|safe }};
+  widget.init(data_from_django);
+</script>
+{% endcomment %} {{ markers|json_script:"django_data"}} {% comment %} This is
+simple comment {% endcomment %} {{ talav|json_script:"talav_data"}}
+
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+></script>
+<script src="/static/main.js"></script>
+{% endblock%}
